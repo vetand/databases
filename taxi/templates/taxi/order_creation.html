@@ -1,0 +1,15 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8">
+    <title>Создать заказ</title>
+</head>
+<body>
+<h1>Создать заказ:</h1>
+<form action="/create-taxi-order/" method="POST" class="post-form">
+        {% csrf_token%}
+        {{ form.as_p }}
+        <button type="submit" value="Submit" class="save btn btn-default">Создать заказ</button>
+</form>
+</body>
+</html>

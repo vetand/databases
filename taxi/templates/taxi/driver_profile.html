@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <meta charset="UTF-8">
+    <title>Профиль водителя</title>
+</head>
+
+<body>
+
+<h1>Профиль водителя:</h1>
+
+<table>
+  <tr>
+    <th>Имя:</th>
+    <td>{{name}}</td>
+  </tr>
+  <tr>
+    <th>Бренд модели автомобиля:</th>
+    <td>{{car_brand}}</td>
+  </tr>
+  <tr>
+    <th>Модель автомобиля:</th>
+    <td>{{car_model}}</td>
+  </tr>
+  <tr>
+    <th>Гос. номер автомобиля:</th>
+    <td>{{car_number}}</td>
+  </tr>
+  <tr>
+    <th>Готов принимать заказы:</th>
+    <td>{{is_active}}</td>
+  </tr>
+  <tr>
+    <th>На заказе:</th>
+    <td>{{has_active_order}}</td>
+  </tr>
+</table>
+
+<h1>Информация о заказах:</h1>
+
+<form action="/change-driver-status/" method="POST" class="post-form">
+{% csrf_token %}
+<button type="submit" value="Submit" class="save btn btn-default">{{change_status_button}}</button>
+
+<input name='driver_id' value='{{driver_id}}' type="hidden">
+<input name='is_active' value='{{new_status}}' type="hidden">
+<input name='has_order' value='{{new_active_order}}' type="hidden">
+
+</form>
+
+</body>
+</html>

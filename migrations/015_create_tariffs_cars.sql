@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS tariffs_cars (
+    id UUID NOT NULL PRIMARY KEY,
+    modelID UUID NOT NULL,
+    tariffID UUID NOT NULL
+);
