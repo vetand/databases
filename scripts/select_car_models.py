@@ -46,7 +46,7 @@ def select_car_models(limit: int):
                 query_pattern = get_query()
                 query_pattern = query_pattern.replace("$1", str(limit))
                 cursor.execute(query_pattern)
-                print(cursor.fetchall())
+                return cursor.fetchall()
         finally:
             if connection:
                 connection.close()

@@ -20,6 +20,8 @@ from . import driver_registration
 from . import driver_profile
 from . import change_driver_status
 from . import create_order
+from . import car_models
+from . import create_car_model
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -28,4 +30,6 @@ urlpatterns = [
     path('driver-profile/', driver_profile.index, name='driver_profile'),
     path('change-driver-status/', change_driver_status.chage_status, name='change_driver_status'),
     path('create-taxi-order/', create_order.create_order_handle, name='create_taxi_order'),
+    path('car-models/', car_models.index, name='car_models'),
+    path('create-car-model/', create_car_model.index, name='create_car_model'),
 ]

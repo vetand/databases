@@ -21,6 +21,8 @@ def insert_car_model(brand: str, model: str, description: str):
                 query_pattern = query_pattern.replace("$2", "'" + model + "'")
                 query_pattern = query_pattern.replace("$3", "'" + description + "'")
                 cursor.execute(query_pattern)
+
+                return cursor.fetchone()
         finally:
             if connection:
                 connection.close()

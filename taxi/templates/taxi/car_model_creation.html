@@ -1,0 +1,15 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8">
+    <title>Новая модель</title>
+</head>
+<body>
+<h1>Новая модель автомобиля:</h1>
+<form action="/create-car-model/" method="POST" class="post-form">
+        {% csrf_token%}
+        {{ form.as_p }}
+        <button type="submit" value="Submit" class="save btn btn-default">Save</button>
+</form>
+</body>
+</html>
